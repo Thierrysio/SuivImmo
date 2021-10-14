@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SuivImmo.Views.ListeBiensView">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <CollectionView ItemsSource="{Binding MaListe}"   VerticalOptions="Fill">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"
+                        Span="1" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="0,10">
+                                <Frame   BorderColor="Gray" CornerRadius="5" Margin="10" >
+                                    <Grid ColumnDefinitions="*,*,90"  RowDefinitions="90,70,30,*">
+                                        <Label Text="Pleubian" FontAttributes="Bold" FontSize="Large" Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" TextColor="#ABABB2" />
+                                        <Ellipse
+            Grid.Row="0"
+            Grid.Column="2"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="85"
+            HeightRequest="85"
+            Stroke="#FFFF9900"
+            StrokeThickness="4"
+            Fill="White"/>
+
+                                        <Image
+            Grid.Row="0"
+            Grid.Column="2"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="80"
+            HeightRequest="80"
+            
+            Source="https://devblogs.microsoft.com/xamarin/wp-content/uploads/sites/44/2019/03/Screen-Shot-2017-01-03-at-3.35.53-PM-150x150.png">
+                                            <Image.Clip>
+                                                <EllipseGeometry
+                    Center="40,40"
+                    RadiusX="40"
+                    RadiusY="40"/>
+                                            </Image.Clip>
+                                        </Image>
+
+                                        <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ornare est ligula, in tristique justo volutpat et. Etiam condimentum quam ut pulvinar pharetra. Phasellus vel turpis vitae mi dapibus suscipit sed eget ligula. Praesent rhoncus porta lorem. Nam ut porta sem. Donec sem erat, hendrerit eget facilisis bibendum, egestas nec libero. In eget lorem pretium, rutrum nibh sed, suscipit nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit." FontAttributes="Bold" FontSize="Small" Grid.Row="1" Grid.Column="0" Margin="10,0,0,0" TextColor="#78787F" Grid.ColumnSpan="3" />
+                                        <Label Text="Prix actuel : 200 000 euros" FontAttributes="Bold" FontSize="Medium" Grid.Row="2" Grid.Column="0" Margin="10,0,0,0" TextColor="#A8A8C1" Grid.ColumnSpan="3" HorizontalOptions="End" />
+
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
